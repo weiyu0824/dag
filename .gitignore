@@ -1,0 +1,67 @@
+.# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases
+*.db
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Dependency directories
+node_modules/
+vendor/
+venv/
+env/
+.npm/
+.pip/
+.bundler/
+.venv/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.tmproj
+*.tmproject
+*.log
+*.tmp
+
+# Configuration files
+.env
+.env.local
+.env.*.local
+*.config.js
+*.config.ts
+*.config.json
+
+# Miscellaneous
+.DS_Store
+desktop.ini
+ehthumbs.db
+Thumbs.db
