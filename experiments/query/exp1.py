@@ -3,6 +3,8 @@ import tqdm
 import cv2
 import numpy as np
 from ultralytics import YOLO 
+import torch
+from metric import calculate_map
 
 def draw(img_path, bboxes, save_path):
     img = cv2.imread(img_path)
@@ -58,10 +60,21 @@ for i in tqdm.tqdm(range(num_frame)):
     post_latency.append(result.speed['postprocess'])
 
     # print(result.conf)
-    print(result.boxes.cls)
-    print(result.boxes.conf)
-    exit()
+    pred_clss = result.boxes.cls
+    pred_confs = result.boxes.conf
+    pred_bboxes = result.boxes.xyxy.round().int()
+    
+    # pred_boxes = 
+    attr = torch.stack([pred_clss, pred_confs]).T
+    pred_boxes = torch.cat([pred_bboxes, attr], dim=1 )
+    print(pred_boxes)
+
+    # gt boxes=
+     
+
     # calculate mAP
+    # calculate_map(true_boxes=, pred_boxes=)
+
 
 print(sum(pre_latency)/num_frame)
 print(sum(inf_latency)/num_frame)
